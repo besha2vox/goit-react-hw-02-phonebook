@@ -7,7 +7,11 @@ const SearchContact = ({ searchContact }) => {
   return (
     <>
       <p className={text}>Fined contact name</p>
-      <input onChange={searchContact} type="text" className={input} />
+      <input
+        onChange={e => searchContact(e.target.value)}
+        type="text"
+        className={input}
+      />
     </>
   );
 };

@@ -37,9 +37,8 @@ class App extends Component {
     );
   };
 
-  hendleChange = e => {
-    const value = e.target.value;
-    this.setState({ filter: value.toLowerCase() });
+  hendleChange = filterWord => {
+    this.setState({ filter: filterWord.toLowerCase() });
   };
 
   render() {
