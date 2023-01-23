@@ -1,5 +1,6 @@
 import styles from './ContactList.module.scss';
 import SearchContact from './SearchContact';
+import ContactListItem from './ContactListItem';
 import PropTypes from 'prop-types';
 
 const ContactList = ({
@@ -8,7 +9,7 @@ const ContactList = ({
   searchContact,
   contactsCount,
 }) => {
-  const { list, item, text, btn, title } = styles;
+  const { list, title } = styles;
 
   return (
     <>
@@ -19,18 +20,13 @@ const ContactList = ({
       </p>
       <ul className={list}>
         {contacts.map(({ name, number, id }) => (
-          <li key={id} className={item}>
-            <button
-              onClick={() => removeContact(id)}
-              type="button"
-              className={btn}
-            >
-              Delete
-            </button>
-            <p className={text}>
-              {name}: {number}
-            </p>
-          </li>
+          <ContactListItem
+            removeContact={removeContact}
+            name={name}
+            number={number}
+            id={id}
+            key={id}
+          />
         ))}
       </ul>
     </>

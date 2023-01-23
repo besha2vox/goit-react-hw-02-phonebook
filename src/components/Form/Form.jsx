@@ -13,6 +13,11 @@ class Form extends Component {
     number: '',
   };
 
+  static propTypes = {
+    isContains: PropType.func.isRequired,
+    addContact: PropType.func.isRequired,
+  };
+
   hendleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -76,10 +81,5 @@ class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-  isContains: PropType.func.isRequired,
-  addContact: PropType.func.isRequired,
-};
 
 export default Form;
